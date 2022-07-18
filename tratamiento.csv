@@ -1,0 +1,153 @@
+ID,gravedad,sa_number,treatment_type
+1,Moderado,4,suero
+4,Severo,4,suero
+5,Leve,4,suero
+9,Severo,4,suero
+10,Moderado,8,suero
+14,Moderado,8,suero
+16,Severo,4,suero
+21,Moderado,NA,Shaman/Curandero
+21,Moderado,NA,Torniquete
+22,Leve,4,suero
+24,Leve,1,suero
+25,Severo,NA,Shaman/Curandero
+25,Severo,NA,incision o corte
+29,Severo,8,suero
+30,Severo,NA,gasolina
+32,Severo,NA,infusion 
+33,Leve,4,suero
+35,Severo,NA,Torniquete
+35,Severo,16,suero
+36,Leve,4,suero
+38,Severo,NA,Shaman/Curandero
+40,Moderado,8,suero
+41,Severo,12,suero
+42,Severo,12,suero
+43,Moderado,16,suero
+44,Severo,8,suero
+45,Severo,12,suero
+46,Severo,4,suero
+47,Severo,9,suero
+57,Severo,4,suero
+59,Severo,4,suero
+60,Severo,12,suero
+62,Severo,8,suero
+63,Severo,8,suero
+66,Moderado,8,suero
+67,Moderado,NA,Torniquete
+68,Moderado,1,suero
+68,Severo,NA,Shaman/Curandero
+68,Severo,NA,incision o corte
+73,Severo,NA,suero
+73,Severo,NA,Shaman/Curandero
+74,Severo,NA,brebaje de hiel de serpiente
+75,Severo,12,suero
+77,Severo,4,suero
+81,Moderado,8,suero
+81,Leve,NA,Shaman/Curandero
+81,Leve,NA,brebaje de hiel de serpiente
+83,Leve,NA,brebaje de hiel de serpiente
+86,Severo,12,suero
+86,Severo,8,suero
+87,Severo,NA,brebaje de hiel de serpiente
+92,Leve,4,suero
+98,Moderado,12,suero
+99,Severo,6,suero
+102,Severo,8,suero
+102,Severo,NA,Torniquete
+105,Leve,NA,Torniquete
+105,Leve,NA,limon caliente en la herida 
+107,Moderado,8,suero
+108,Severo,12,suero
+109,Severo,12,suero
+111,Moderado,NA,Torniquete
+111,Moderado,NA,suero
+112,Leve,NA,hierbas
+114,Moderado,8,suero
+115,Moderado,8,suero
+116,Severo,12,suero
+118,Severo,NA,Shaman/Curandero
+118,Severo,NA,Torniquete
+118,Severo,NA,brebaje de hiel de serpiente
+120,Moderado,NA,Succion
+120,Moderado,NA,suero
+121,Moderado,NA,Torniquete
+121,Moderado,NA,brebaje de hiel de serpiente
+121,Moderado,NA,hierbas
+123,Severo,NA,Shaman/Curandero
+123,Severo,NA,hierbas
+123,Severo,NA,brebaje de hiel de serpiente
+124,Severo,4,suero
+125,Severo,8,suero
+126,Moderado,NA,Torniquete
+126,Moderado,NA,brebaje de hiel de serpiente
+127,Moderado,NA,Shaman/Curandero
+127,Moderado,NA,hierbas
+127,Moderado,NA,brebaje de hiel de serpiente
+127,Moderado,NA,Torniquete
+128,Severo,NA,brebaje de hiel de serpiente
+128,Severo,NA,hierbas
+130,Moderado,NA,Shaman/Curandero
+131,Moderado,NA,Torniquete
+132,Moderado,NA,Torniquete
+132,Moderado,NA,Succion
+133,Severo,12,suero
+133,Severo,NA,hierbas
+137,Moderado,NA,Torniquete
+138,Moderado,8,suero
+138,Moderado,8,suero
+139,Moderado,NA,brebaje de hiel de serpiente
+142,Moderado,2,suero
+143,Moderado,4,suero
+144,Severo,12,suero
+145,Severo,NA,brebaje de hiel de serpiente
+146,Leve,4,suero
+148,Moderado,4,suero
+150,Severo,NA,Shaman/Curandero
+150,Severo,NA,brebaje de hiel de serpiente
+151,Moderado,NA,hierbas
+151,Moderado,8,suero
+151,Moderado,NA,Torniquete
+152,Severo,NA,Succion
+152,Severo,12,suero
+153,Leve,NA,Shaman/Curandero
+156,Moderado,NA,Torniquete
+156,Moderado,NA,brebaje de hiel de serpiente
+158,Severo,12,suero
+159,Moderado,NA,frio local 
+160,Severo,12,suero
+161,Severo,NA,Shaman/Curandero
+161,Severo,NA,Torniquete
+161,Severo,NA,brebaje de hiel de serpiente
+161,Severo,NA,incision o corte
+163,Moderado,NA,Torniquete
+164,Severo,NA,Torniquete
+167,Severo,12,suero
+167,Severo,NA,Shaman/Curandero
+168,Severo,NA,Shaman/Curandero
+169,Moderado,2,suero
+169,Moderado,NA,Torniquete
+171,Moderado,NA,incision o corte
+171,Moderado,NA,Shaman/Curandero
+171,Moderado,NA,hierbas
+171,Moderado,4,suero
+173,Leve,4,suero
+174,Moderado,NA,Torniquete
+174,Moderado,NA,incision o corte
+175,Moderado,NA,frio local 
+176,Moderado,NA,hierbas
+177,Moderado,NA,brebaje de hiel de serpiente
+180,Severo,NA,incision o corte
+183,Severo,NA,incision o corte
+183,Severo,12,suero
+184,Severo,NA,Inmovilizacion
+184,Severo,NA,incision o corte
+184,Severo,NA,hierbas
+184,Severo,NA,brebaje de hiel de serpiente
+184,Severo,NA,Torniquete
+188,Moderado,4,suero
+189,Severo,NA,Torniquete
+189,Severo,8,suero
+190,Moderado,NA,Shaman/Curandero
+190,Moderado,NA,incision o corte
+191,Moderado,NA,brebaje de hiel de serpiente
