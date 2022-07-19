@@ -668,7 +668,10 @@ summary (ex1)
 #' Figures through GGPLOT 2 for sure
 #' Definitive boxplots 
 #' Boxplots with uncertainties 
-#' ADD INFORMATION FROM THE CT VALUES PAPER, PLOTS THERE WHERE BEAUTIFUL :) 
+#' ADD INFORMATION FROM THE CT VALUES PAPER, PLOTS THERE WHERE BEAUTIFUL :)
+#' ADD MANUEL VILLANUEVA CODE  
+#' PLOTS DEPICTING NUMBERS: https://stackoverflow.com/questions/53134623/text-in-barplot-in-r
+#' 
 
 
 
