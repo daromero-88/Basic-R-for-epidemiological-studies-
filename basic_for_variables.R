@@ -656,7 +656,142 @@ summary (ex1)
 #' This example comes from databases of early COVID-19 in Ecuador
 
 
+#INCIDENCE AND POISSON CONFIDENCE INTERVALS-----------------------------
 
+setwd ('/Users/daniel/Documents/UDLA/MARCO_TEAM/_MANUSCRITO1')
+
+#' This section is related with a project that tries to address the incidence of stroke
+#' in Ecuador for different years, divided by genre and ethnical grounds. 
+#' Values are coming from table 3 of the manuscript: 
+#' Ethnodemographic characterization of stroke incidence and burden of disease in hospital discharge records in Ecuador
+#' That is going to be submitted to FRONTIERS IN NEUROLOGY
+#' A beautiful discussion on incidence calculation and definition can be found here: 
+#' https://www.ncbi.nlm.nih.gov/books/NBK430746/#:~:text=Incidence%20%3D%20(New%20Cases)%20%2F,newly%20diagnosed%20with%20diabetes%20mellitus
+#' So, for calculating the incidence we have to actually use the population that is in risk 
+#' in this case, the male population for 2015. Estimates of the population can be found in 
+#' the database that is offering total populations estimates divided by genre in Ecuador 
+
+
+#' Total of male population in Ecuador across different years: 
+#incidence calculation 
+pop_male2015 =8062610
+pop_male2016=8184970
+pop_male2017=8306557
+pop_male2018=8427261
+pop_male2019=8547067
+pop_male2020=8665937
+pop_male_sum = pop_male2015+pop_male2016+pop_male2017+
+  pop_male2018+pop_male2019+pop_male2020 #notice that this object contains the sum of total population per those 5 years
+
+a = (32609/(pop_male_sum))*100000 #the total incidence is calculated using the entire sum of the ppulation across years 
+
+
+#' To calculate confidence intervals based on the Poisson distribution we can use 
+#' the package DescTools and the function PoissonCI. We defining this particular 
+#' function we need to specify the number of events, so the number of strokes
+#' over the population in risk...
+
+install.packages('DescTools')
+library (DescTools)
+
+
+PoissonCI (32609, n = pop_male_sum, conf.level = 0.95, sides = c("two.sided","left","right"), 
+           method = c("exact", "score", "wald", "byar"))*100000 #we have added the 100000 because we are calculating the incidence over 100000
+
+#' Notice the different flavors of the confidence intervals.
+#' For this particular excercise we will use the two sided exact calculation, so the first row of 
+#' the output table... 
+
+#MANUALLY COPYING VALUES, COPY AND PASTE: 
+
+#2015
+PoissonCI (6198, n = pop_male2015, conf.level = 0.95, sides = c("two.sided"), 
+           method = c("exact"))*100000 #we have added the 100000 because we are calculating the incidence over 100000
+
+#2016
+PoissonCI (4789, n = pop_male2016, conf.level = 0.95, sides = c("two.sided"), 
+           method = c("exact"))*100000 #we have added the 100000 because we are calculating the incidence over 100000
+
+#2017
+PoissonCI (6884, n = pop_male2017, conf.level = 0.95, sides = c("two.sided"), 
+           method = c("exact"))*100000 #we have added the 100000 because we are calculating the incidence over 100000
+
+#2018
+PoissonCI (5056, n = pop_male2018, conf.level = 0.95, sides = c("two.sided"), 
+           method = c("exact"))*100000 #we have added the 100000 because we are calculating the incidence over 100000
+
+#2019
+PoissonCI (5266, n = pop_male2019, conf.level = 0.95, sides = c("two.sided"), 
+           method = c("exact"))*100000 #we have added the 100000 because we are calculating the incidence over 100000
+
+#2020
+PoissonCI (4416, n = pop_male2020, conf.level = 0.95, sides = c("two.sided"), 
+           method = c("exact"))*100000 #we have added the 100000 because we are calculating the incidence over 100000
+
+
+PoissonCI (4416, n = pop_male2020, conf.level = 0.95, sides = c("two.sided"), 
+                method = c("exact"))*100000 #we have added the 100000 because we are calculating the incidence over 100000
+
+
+#FEMALE POPULATION ACROSS YEARS: 
+#LOOP TO OBTAIN A MATRIX WITH CONFIDENCE INTERVALES PER YEAR: 
+years = list(2015, 2016, 2017, 2018, 2019, 2020)
+
+fem_pop = list(8216234,8343760,8470420,8596147,8720919,8844706)
+
+fem_cases = list (5726, 4256, 6221, 4642, 4775, 3989)
+
+fem_inc = (sum(unlist(fem_cases))/sum(unlist(fem_pop)))*100000
+
+#Obtaing the Poisson CIs in a loop: 
+fem_per_year = NULL
+
+#iii = 1 #debugging
+
+for (iii in 1:length(fem_pop)){
+  a = PoissonCI(as.numeric(fem_cases[iii]), n = as.numeric(fem_pop[iii]), 
+                conf.level = 0.95, sides = c("two.sided"), 
+                method = c("exact"))*100000
+  pref1 = cbind (years= years[iii], est = a[,1], lw = a[,2], hi = a[,3])
+  fem_per_year = rbind (fem_per_year, pref1)
+}
+
+#overall estimates: 
+PoissonCI(sum(unlist(fem_cases)), n = sum(unlist(fem_pop)), 
+          conf.level = 0.95, sides = c("two.sided"), 
+          method = c("exact"))*100000
+
+write.csv (fem_per_year, 'fem_intervals.csv', row.names = F)
+
+#ANNEX 1: 
+years = list(2015, 2016, 2017, 2018, 2019, 2020)
+
+#INDIGENOUS GROUP: 
+indi_ma_cases = c(81, 72, 122, 101, 110, 95)
+indi_ma_pop = c(566801, 575403,	583951,	592436,	600859,	609215)
+
+indi_ma_total = (sum((indi_ma_cases))/sum((indi_ma_pop)))*100000
+
+
+#Obtaing the Poisson CIs in a loop: 
+indi_ma_intervals = NULL
+
+#iii = 1 #debugging
+
+for (iii in 1:length(indi_ma_pop)){
+  a = PoissonCI(indi_ma_cases[iii], n = indi_ma_pop[iii], 
+                conf.level = 0.95, sides = c("two.sided"), 
+                method = c("exact"))*100000
+  pref1 = cbind (years= years[iii], est = a[,1], lw = a[,2], hi = a[,3])
+  indi_ma_intervals = rbind (indi_ma_intervals, pref1)
+}
+
+#overall estimates: 
+PoissonCI(sum(unlist(fem_cases)), n = sum(unlist(fem_pop)), 
+          conf.level = 0.95, sides = c("two.sided"), 
+          method = c("exact"))*100000
+
+write.csv (indi_ma_intervals, 'indi_ma_intervals.csv', row.names = F)
 
 
 #####STUFF TO DO#######
